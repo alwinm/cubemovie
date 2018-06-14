@@ -1,6 +1,8 @@
 # cubemovie
 
-Python code for transmuting numpy arrays into reasonable mp4 movies. Hold numpy array in a .npy file (generated from numpy.save(filename.npy,array))
+Python code for transmuting numpy arrays into reasonable mp4 movies using matplotlib and ffmpeg. 
+
+Hold numpy array in a .npy file (generated from numpy.save(filename.npy,array))
 
 ## Basic usage
 
