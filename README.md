@@ -9,6 +9,7 @@ Hold numpy array in a .npy file.
 Generate a .npy file from numpy.save(filename.npy,array).
 
 A preprocessing script can produce all the frames and save them to a 3-D array of shape:
+
     [N_frames,N_vertical,N_horizontal] 
 
 Then, run:
