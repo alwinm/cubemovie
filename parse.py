@@ -55,4 +55,4 @@ def parse2():
         print('Mpeg = True')
     if boolog:
         print('Log = True')
-    return booshow,boogif,boompg,boolog
+    return booshow,boogif,boompg,boolog,filename

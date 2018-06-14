@@ -1,5 +1,3 @@
-import sys
-import getopt
 import matplotlib.pyplot as plt
 import matplotlib.colors as mco
 from mpl_toolkits.axes_grid1 import make_axes_locatable
@@ -15,7 +13,7 @@ def makead(nw,nh,ns,numplots):
 
 def plotframe(x,y,data,axs,divs,ni,vmin0,vmax0,cbbool):
     axs[ni].cla()
-    im = axs[ni].pcolormesh(y,x,data,cmap=plt.get_cmap('viridis'),vmin=vmin0,vmax=vmax0,norm=gnorm,zorder=0)
+    im = axs[ni].pcolormesh(y,x,data,cmap=plt.get_cmap('viridis'),vmin=vmin0[ni],vmax=vmax0[ni],norm=gnorm,zorder=0)
     if cbbool:
         plt.colorbar(im,cax=divs[ni])
         plt.tight_layout()
