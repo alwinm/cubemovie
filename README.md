@@ -37,7 +37,9 @@ tools.py contains some useful functions
 
 basic.py is the main script
 
-mask.py  is a specific application. 
+mask.py  is a specific application 
+
+dict.py  is a specific application
 
 ## Mask
 
@@ -46,3 +48,11 @@ Given an array of shape
 split into two arrays of shape 
     [N_frames,N_vertical,N_horizontal]
 The first array is some original field, and the second array is like a mask: non-zero values in some areas, and 0 everywhere else. Both arrays are plotted side-by-side, and contours of the Mask (second array) are drawn over the Original (first array). 
+
+## Dict
+
+Given a python dictionary, plots the following according to the dictionary key:
+contour-1: takes a mask of 0 and 1 and makes 2-D contour plot to delineate the boundaries in black
+contour-2: takes a mask of 0 and 1 and makes 2-D contour plot to delineate the boundaries in red
+scatter-x, scatter-y: given these, draw scatter points on top 
+data: 

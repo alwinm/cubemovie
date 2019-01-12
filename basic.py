@@ -1,5 +1,5 @@
-#First use python -m script_ppp to parallel preprocess slices
-#Then use this to load those slices and just plot them real simple
+# First (parallel) preprocess slices into 3-D array
+# Then use this to turn 3-D array into movie
 
 # Parse args, Handle data, Animate, Output
 

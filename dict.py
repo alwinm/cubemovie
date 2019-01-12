@@ -53,14 +53,11 @@ else:
 #default norm is LogNorm
 
 # END SETUP
-# BEGIN HANDLE DATA
+# BEGIN HANDLE DATA IN FORM OF DICT
 t0 = time.time()
-datalist = n.load(filename)
-# if datalist is 4-d it is multiple datasets
-if len(datalist.shape) == 4:
-    pass
-else:
-    datalist = [datalist]
+datadict = n.load(filename)
+keys = datadict.keys()
+datalist = n.array([datadict['data'],datadict['contour-1']])
 ds = datalist.shape
 vmin0 = n.zeros(ds[0])
 vmax0 = n.zeros(ds[0])
@@ -82,6 +79,35 @@ numplots = ds[0]
 fig,axs,divs = tools.makead(nw,nh,ns,numplots)
 tp = time.time()
 
+if 'contour-1' in keys:
+    def contour1(i):
+        ni = 0
+        axs[ni].contour(datadict['contour-1'][i],origin='lower',levels=[0])
+else:
+    def contour1(i):
+        pass
+if 'contour-2' in keys:
+    def contour2(i):
+        ni = 0
+        axs[ni].contour(datadict['contour-2'][i],origin='lower',levels=[0],colors='r')
+else:
+    def contour2(i):
+        pass
+
+if 'scatter-x' in keys:
+    def scatter(i):
+
+        size = n.log10(datadict['scatter-size'][i])
+        # scale to between 10 and 20
+        ss = 20 * (size - n.min(size))/(n.max(size) - n.min(size)) + 10
+        ni = 0
+        axs[ni].scatter(datadict['scatter-x'][i],datadict['scatter-y'][i],s=ss,c='k')
+        ni = 1
+        axs[ni].scatter(datadict['scatter-x'][i],datadict['scatter-y'][i],s=ss,c='k')
+else:
+    def scatter(i):
+        pass
+
 def animate(i):
     if (i%5 == 0):
         totali = ds[1]
@@ -93,7 +119,11 @@ def animate(i):
     ni = 0
     output = tools.plotframe(x,y,datalist[ni][i],axs,divs,ni,vmin0,vmax0,cbbool)
     if (numframes > 1):
-        axs[ni].contour(datalist[1][i],origin='lower',levels=[0])
+        axs[ni].contour(datalist[1][i],origin='lower',levels=[0],colors='k')
+        contour2(i)
+        scatter(i)
+        axs[ni].set_xlim(0,ds[3])
+        axs[ni].set_ylim(0,ds[2])
         ni = 1
         output = tools.plotframe(x,y,datalist[ni][i],axs,divs,ni,vmin0,vmax0,cbbool)
 
