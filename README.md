@@ -23,11 +23,12 @@ Then, run:
     -m # alternate mpeg option for wider compatibility but worse quality
     -g # make a gif from the mp4 output
     -h # show help
-
+    -fps N # set fps 
 ## Advanced usage example:
 
     python -m cubemovie.basic filename1.npy -l
     python -m cubemovie.mask  filename1.npy ignored_filename2.npy -l -s
+    python -m cubemovie.basic filename1.npy -fps 5
 
 ## Files
 
