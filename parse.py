@@ -36,12 +36,14 @@ def parse2():
     parser.add_argument('-g',help=('make gif'),action='store_true')
     parser.add_argument('-m',help=('more compatible mpeg'),action='store_true')
     parser.add_argument('-l',help=('log'),action='store_true')
+    parser.add_argument('-fps',help=('fps'),type=int,default=10)
     parser.add_argument('files',nargs="*",help=('filenames'))
     args = parser.parse_args()
     booshow = args.s
     boogif = args.g
     boompg = args.m
     boolog = args.l
+    gfps = args.fps
     files = [fn for fn in args.files if '.npy' in fn]
     if len(files) > 0:
         filename = files[0]
@@ -55,4 +57,5 @@ def parse2():
         print('Mpeg = True')
     if boolog:
         print('Log = True')
-    return booshow,boogif,boompg,boolog,filename
+    print('fps =',gfps)
+    return booshow,boogif,boompg,boolog,gfps,filename

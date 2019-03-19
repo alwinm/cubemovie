@@ -6,7 +6,7 @@ import time
 # package module 
 import parse 
 verbose = False
-booshow,boogif,boompg,boolog,filename = parse.parse2()
+booshow,boogif,boompg,boolog,gfps,filename = parse.parse2()
 # matplotlib
 import matplotlib
 if booshow:
@@ -20,8 +20,7 @@ import numpy as n
 import tools
 
 # BEGIN SETUP
-
-gfps = 10
+# gfps = 10 # now set in parse
 
 if booshow:
     pass
