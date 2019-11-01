@@ -24,6 +24,8 @@ Then, run:
     -g # make a gif from the mp4 output
     -h # show help
     -fps N # set fps 
+    -size INCHES # set matplotlib figsize in inches (higher will be higher res)
+
 ## Advanced usage example:
 
     python -m cubemovie.basic filename1.npy -l
