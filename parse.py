@@ -37,6 +37,7 @@ def parse2():
     parser.add_argument('-m',help=('more compatible mpeg'),action='store_true')
     parser.add_argument('-l',help=('log'),action='store_true')
     parser.add_argument('-fps',help=('fps'),type=int,default=10)
+    parser.add_argument('-size',help=('matplotlib figsize'),type=float,default=5)
     parser.add_argument('files',nargs="*",help=('filenames'))
     args = parser.parse_args()
     booshow = args.s
@@ -58,4 +59,4 @@ def parse2():
     if boolog:
         print('Log = True')
     print('fps =',gfps)
-    return booshow,boogif,boompg,boolog,gfps,filename
+    return booshow,boogif,boompg,boolog,gfps,filename,args

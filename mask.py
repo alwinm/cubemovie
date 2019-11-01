@@ -6,7 +6,7 @@ import time
 # package module 
 import parse 
 verbose = False
-booshow,boogif,boompg,boolog,gfps,filename = parse.parse2()
+booshow,boogif,boompg,boolog,gfps,filename,pargs = parse.parse2()
 # matplotlib
 import matplotlib
 if booshow:
@@ -77,7 +77,7 @@ x = n.arange(ds[3])
 # ANIMATE SETUP
 nw = ds[0]
 nh = 1
-ns = 5
+ns = pargs.size
 numplots = ds[0]
 fig,axs,divs = tools.makead(nw,nh,ns,numplots)
 tp = time.time()

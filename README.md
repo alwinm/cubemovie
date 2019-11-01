@@ -53,7 +53,11 @@ The first array is some original field, and the second array is like a mask: non
 ## Dict
 
 Given a python dictionary, plots the following according to the dictionary key:
+
 contour-1: takes a mask of 0 and 1 and makes 2-D contour plot to delineate the boundaries in black
+
 contour-2: takes a mask of 0 and 1 and makes 2-D contour plot to delineate the boundaries in red
+
 scatter-x, scatter-y: given these, draw scatter points on top 
+
 data: 
