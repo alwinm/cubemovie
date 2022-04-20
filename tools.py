@@ -4,8 +4,8 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 gnorm = mco.LogNorm()
 def makead(nw,nh,ns,numplots):
     fig = plt.figure(figsize=(nw*ns,nh*ns))
-    axs = range(numplots)
-    divs = range(numplots)
+    axs = list(range(numplots))
+    divs = list(range(numplots))
     for i in range(numplots):
         axs[i] = fig.add_subplot(nh,nw,i+1)
         divs[i] = make_axes_locatable(axs[i]).append_axes('right',size='5%',pad=0.0)

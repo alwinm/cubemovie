@@ -4,7 +4,7 @@
 import os
 import time
 # package module 
-import parse 
+import cubemovie.parse as parse 
 verbose = False
 booshow,boogif,boompg,boolog,gfps,filename,pargs = parse.parse2()
 # matplotlib
@@ -17,7 +17,7 @@ from matplotlib import animation
 # numpy
 import numpy as n
 # package module
-import tools
+import cubemovie.tools as tools
 
 # BEGIN SETUP
 # gfps = 10 # now set in parse
